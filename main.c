@@ -84,7 +84,7 @@ int main_aleatoire(int nb_points, int nb_point_max) {
 
     /* Affichage */
     affiche_points(tab_point, nb_points);
-    affiche_quadtree(quadtree);
+    affiche_quadtree(quadtree, nb_point_max);
     MLV_actualise_window();
     
     MLV_wait_keyboard_or_mouse(NULL, NULL, NULL, NULL, NULL);
@@ -139,7 +139,7 @@ int main_souris(int nb_points, int nb_point_max) {
             /* Affichage */
             MLV_clear_window(MLV_rgba(30, 30, 30, 255));
             affiche_points(tab_point, nb_point_courent);
-            affiche_quadtree(quadtree);
+            affiche_quadtree(quadtree, nb_point_max);
             MLV_actualise_window();
 
             k++;
@@ -152,7 +152,7 @@ int main_souris(int nb_points, int nb_point_max) {
 
     }
 
-    MLV_wait_keyboard_or_mouse(NULL, NULL, NULL, NULL, NULL);
+    MLV_wait_keyboard(NULL, NULL, NULL);
 
     MLV_free_window();
 

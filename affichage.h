@@ -30,6 +30,12 @@ void init_mlv();
  */
 void affiche_points(Tab_point tab, unsigned int nb_points);
 
-void affiche_quadtree(Quadtree quadtree);
+/**
+ * @brief Affiche les feuilles d'un arbre quadtree séparent un nuage de points
+ * 
+ * @param quadtree Quadtree à afficher
+ * @param nb_point_max Nombre de point maximal contenu dans une feuille
+ */
+void affiche_quadtree(Quadtree quadtree, unsigned int nb_point_max);
 
 #endif

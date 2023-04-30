@@ -45,13 +45,17 @@ static void initialise_cell_quadtree(Quadtree_Cell* cell) {
 static void initialise_toute_cellule(Quadtree quadtree) {    
     int k, l;
 
+    for (k = 0; k < compte_nb_cell(); ++k) {
+        initialise_cell_quadtree(&(quadtree[k]));
+    }
+
     /* Traitement de la première cellule */
-    initialise_cell_quadtree(&(quadtree[0]));
     quadtree[0].taille = WIN_WIDTH;
     quadtree[0].profondeur = 0;
 
     /* Traitement de toutes les cellules */
     for (k = 0; k < (compte_nb_cell() / 4); ++k) {
+
         /* Calcule de l'adresse de ses fils, leur position et leur taille */
         for (l = 0; l < 4; ++l) {
             quadtree[k].fils[l] = &(quadtree[4 * k + l + 1]);
